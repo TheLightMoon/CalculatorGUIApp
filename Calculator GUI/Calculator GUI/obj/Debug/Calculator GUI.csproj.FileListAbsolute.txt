@@ -1,0 +1,17 @@
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI.csprojAssemblyReference.cache
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\App.g.cs
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI_MarkupCompile.cache
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\bin\Debug\Calculator GUI.exe.config
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\bin\Debug\Calculator GUI.exe
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\bin\Debug\Calculator GUI.pdb
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\MainWindow.g.cs
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI_MarkupCompile.lref
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\MainWindow.baml
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI.g.resources
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator_GUI.Properties.Resources.resources
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI.csproj.GenerateResource.cache
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI.csproj.CoreCompileInputs.cache
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI.exe
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI.pdb
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\bin\Debug\NCalc.dll
+C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\Calculator GUI.csproj.CopyComplete

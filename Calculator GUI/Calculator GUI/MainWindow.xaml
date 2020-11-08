@@ -1,0 +1,152 @@
+﻿<Window x:Class="Calculator_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator_GUI"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="CanMinimize"
+        Title="MainWindow" Height="500" Width="300">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="173*"/>
+            <RowDefinition Height="328*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0.112"/>
+                <GradientStop Color="#FF1D3C1A" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DockPanel  VerticalAlignment="Top" 
+                    HorizontalAlignment="Stretch"
+                    LastChildFill="False"
+                    Background="Transparent"
+                    Height="25"
+                    MouseLeftButtonDown="DockPanel_MouseLeftButtonDown"
+                    >
+            <Image Margin="0,0,10,0"
+                   PreviewMouseDown="Image_PreviewMouseDown_Close"
+                   Cursor="Hand"
+                   DockPanel.Dock="Right"
+                   Source="Image/x.png">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="12"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Image.IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="15"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
+            <Image Margin="0,0,5,0"
+                   PreviewMouseDown="Image_PreviewMouseDown_Minimized"
+                   Cursor="Hand"
+                   DockPanel.Dock="Right"
+                   Source="Image/-.png">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="12"></Setter>
+                        <Style.Triggers>
+                            <Trigger Property="Image.IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="15"></Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </DockPanel>
+
+
+        <Grid Height="100" VerticalAlignment="Top">
+            <TextBlock FontSize="50"
+                       Foreground="DarkBlue"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold" 
+                       FontFamily="Segoe UI Black" 
+                       >Calculatior</TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="0" Margin="0,100,0,0" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="105"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.ColumnSpan="4" Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition ></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBox TextWrapping="Wrap"
+                             TextAlignment="Right"
+                             x:Name="txtDisplay"
+                             IsReadOnly="True"
+                             Background="#FF110D0D"
+                             Grid.Row="0"
+                             FontSize="20"
+                             Foreground="#FF0CFF00">0
+                    </TextBox>
+
+                    <GridSplitter HorizontalAlignment="Stretch" Foreground="Yellow" Grid.Row="1" Width="2"></GridSplitter>
+
+                    <TextBox TextWrapping="Wrap"
+                             TextAlignment="Right"
+                             x:Name="txtResult"
+                             IsReadOnly="True"
+                             Background="White"
+                             Grid.Row="2"
+                             FontSize="20" >
+                    </TextBox>
+
+                </Grid>
+            </Grid>
+
+            <!--Sign-->
+            <Button x:Name="BackSpace" Click="BackSpace_Click" Margin="10" Grid.Row="1" Grid.Column="0" FontSize="20">BS</Button>
+            <Button x:Name="Clear" Click="Clear_Click" Margin="10" Grid.Row="1" Grid.Column="1" FontSize="20">C</Button>
+            <Button x:Name="ClearEmpty" Click="ClearEmpty_Click" Margin="10" Grid.Row="1" Grid.Column="2" FontSize="20">CE</Button>
+            <Button x:Name="Equals" Click="Equals_Click" Margin="10" Grid.Row="5" Grid.Column="3" FontSize="20">=</Button>
+            <Button x:Name="Positive_Negative" Click="Positive_Negative_Click" Margin="10" Grid.Row="5" Grid.Column="0" FontSize="20">+/-</Button>
+            <Button x:Name="Dot" Click="Dot_Click" Margin="10" Grid.Row="5" Grid.Column="2" FontSize="20">.</Button>
+            <!--Multiplication, Division, Addition, Subtraction-->
+            <Button x:Name="Multiplication" Click="Formula_Click" Margin="10" Grid.Row="2" Grid.Column="3" FontSize="20">*</Button>
+            <Button x:Name="Division" Click="Formula_Click" Margin="10" Grid.Row="1" Grid.Column="3" FontSize="20">/</Button>
+            <Button x:Name="Addition" Click="Formula_Click" Margin="10" Grid.Row="4" Grid.Column="3" FontSize="20">+</Button>
+            <Button x:Name="Subtraction" Click="Formula_Click" Margin="10" Grid.Row="3" Grid.Column="3" FontSize="20">-</Button>
+            <!--Number 0, 1, 2, 3, 4, 5, 6, 7, 8, 9-->
+            <Button x:Name="Zero" Click="Number_Click" Margin="10" Grid.Row="5" Grid.Column="1" FontSize="20">0</Button>
+            <Button x:Name="One" Click="Number_Click" Margin="10" Grid.Row="4" Grid.Column="0" FontSize="20">1</Button>
+            <Button x:Name="Two" Click="Number_Click" Margin="10" Grid.Row="4" Grid.Column="1" FontSize="20">2</Button>
+            <Button x:Name="Three" Click="Number_Click" Margin="10" Grid.Row="4" Grid.Column="2" FontSize="20">3</Button>
+            <Button x:Name="Four" Click="Number_Click" Margin="10" Grid.Row="3" Grid.Column="0" FontSize="20">4</Button>
+            <Button x:Name="Five" Click="Number_Click" Margin="10" Grid.Row="3" Grid.Column="1" FontSize="20">5</Button>
+            <Button x:Name="Six" Click="Number_Click" Margin="10" Grid.Row="3" Grid.Column="2" FontSize="20">6</Button>
+            <Button x:Name="Seven" Click="Number_Click" Margin="10" Grid.Row="2" Grid.Column="0" FontSize="20">7</Button>
+            <Button x:Name="Eight" Click="Number_Click" Margin="10" Grid.Row="2" Grid.Column="1" FontSize="20">8</Button>
+            <Button x:Name="Nine" Click="Number_Click" Margin="10" Grid.Row="2" Grid.Column="2" FontSize="20">9</Button>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
