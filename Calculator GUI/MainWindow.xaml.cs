@@ -112,6 +112,23 @@ namespace Calculator_GUI
             }
         }
 
+
+        private void Dot_Click(object sender, RoutedEventArgs e)
+        {
+            string expDot = expression.EndsWith(".") ? expression : expression + ".0";
+            try
+            {
+                string validDot = new NCalc.Expression(expDot).Evaluate().ToString();
+                expression += ".";
+                DisplayToTextBox();
+            }
+            catch (Exception ex)
+            {
+                //If errors don't to do
+                Console.WriteLine(ex.Message.ToString());
+            }
+        }
+
         //Result
         private void DisplayToResult()
         {
@@ -186,19 +203,5 @@ namespace Calculator_GUI
             formula = "";
         }
 
-        private void Dot_Click(object sender, RoutedEventArgs e)
-        {
-            string expDot = expression.EndsWith(".") ? expression : expression + ".0";
-            try
-            {
-                string validDot = new NCalc.Expression(expDot).Evaluate().ToString();
-                expression += ".";
-                DisplayToTextBox();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error");
-            }
-        }
     }
 }

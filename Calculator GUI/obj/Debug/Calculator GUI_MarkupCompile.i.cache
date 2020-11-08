@@ -1,7 +1,7 @@
 ﻿Calculator GUI
 
 
-exe
+winexe
 C#
 .cs
 C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\obj\Debug\
@@ -16,5 +16,5 @@ C:\Users\nguye\source\Repos\Calculator GUI\Calculator GUI\App.xaml
 141343749312
 MainWindow.xaml;
 
-True
+False
 
